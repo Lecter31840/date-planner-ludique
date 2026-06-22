@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planifier notre date</title>
+    <meta
+      name="description"
+      content="Un mini site pour choisir une date, une heure et une activité."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="site" aria-live="polite">
+      <section class="screen hero-screen" data-step="0" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title">
+            Non c'est pas un site pour les pieds c'est un site pour planifier notre date
+            <span aria-label="fête" role="img">🥳</span>
+          </h1>
+
+          <div class="button-zone">
+            <button class="primary-button start-button" type="button" data-start>
+              ok c'est parti
+            </button>
+            <button class="no-button" type="button" data-no>non</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen form-screen is-hidden" data-step="1" aria-labelledby="date-title">
+        <div class="step-layout">
+          <h2 id="date-title">Quand es-tu disponible ?</h2>
+          <p class="support-text">Ta date sera la mienne.</p>
+
+          <label class="field">
+            <span>Date et heure</span>
+            <input type="datetime-local" data-date-input />
+          </label>
+
+          <p class="error-text" data-date-error></p>
+
+          <div class="nav-row">
+            <button class="ghost-button" type="button" data-back>Retour</button>
+            <button class="primary-button" type="button" data-next-date>Continuer</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen form-screen is-hidden" data-step="2" aria-labelledby="activity-title">
+        <div class="step-layout">
+          <h2 id="activity-title">On fait quoi ?</h2>
+          <p class="support-text">Choisis une ou plusieurs options, je prends des notes très sérieusement.</p>
+          <p class="support-text support-text-secondary">
+            J'ai fait un site donc c'est à toi de choisir ce qu'on fait.
+          </p>
+
+          <div class="activity-grid" data-activity-group>
+            <button class="activity-card selected" type="button" data-activity="Un repas">
+              <span>🍽️</span>
+              <strong>Un repas</strong>
+            </button>
+            <button class="activity-card" type="button" data-activity="Une balade">
+              <span>🚶</span>
+              <strong>Une balade</strong>
+            </button>
+            <button class="activity-card" type="button" data-activity="Un verre">
+              <span>🍹</span>
+              <strong>Un verre</strong>
+            </button>
+            <button class="activity-card" type="button" data-activity="Une activité à définir">
+              <span>🎯</span>
+              <strong>Une activité</strong>
+            </button>
+            <button class="activity-card" type="button" data-activity="Autre">
+              <span>✍️</span>
+              <strong>Autre</strong>
+            </button>
+          </div>
+
+          <label class="field other-field is-hidden" data-other-field>
+            <span>Si tu veux préciser</span>
+            <input type="text" data-other-input placeholder="Écris ton idée ici" />
+          </label>
+
+          <div class="nav-row">
+            <button class="ghost-button" type="button" data-back>Retour</button>
+            <button class="primary-button" type="button" data-next-activity>Voir le récap</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen recap-screen is-hidden" data-step="3" aria-labelledby="recap-title">
+        <div class="confetti-layer" data-confetti-layer aria-hidden="true"></div>
+        <div class="step-layout recap-layout">
+          <p class="recap-badge">Rendez-vous confirmé 💘</p>
+          <h2 id="recap-title">C'est un match !</h2>
+
+          <div class="recap-list">
+            <p>
+              <span>Date</span>
+              <strong data-summary-date>À choisir</strong>
+            </p>
+            <p>
+              <span>Activités</span>
+              <strong data-summary-activity>Un repas</strong>
+            </p>
+          </div>
+
+          <p class="screenshot-note">
+            Fais un screenshot de cette page et envoie le moi pour m'envoyer ta réponse stpppp
+            j'ai pas mis le système pour que j'ai un retour ou que ça envoie un mail ou je
+            sais pas quoi d'autre.
+          </p>
+
+          <div class="nav-row">
+            <button class="ghost-button" type="button" data-back>Modifier</button>
+            <button class="primary-button" type="button" data-restart>Recommencer</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
